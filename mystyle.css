@@ -1,0 +1,30 @@
+/* Optional: Makes the sample page fill the window. */
+html, body {
+height: 100%;
+margin: 0;
+padding: 0;
+}
+
+#map {
+height: 100%;
+}
+
+#centered { 
+	position: absolute; 
+	top: 50%; 
+	left: 50%; 
+	z-index: 99;
+}
+
+#topleft { 
+	position: absolute; 
+	top: 0%; 
+	left: 0%; 
+	z-index: 99;
+}
+#topright { 
+	position: absolute; 
+	top: 0%; 
+	right: 2%; 
+	z-index: 99;
+}
