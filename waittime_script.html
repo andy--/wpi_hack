@@ -1,24 +1,41 @@
-<script>
+<!DOCTYPE html>
+<html>
+    <body>
+ 
+        <p id="waittime"></p>
+        <br>
+        <div id= waittime2></div>
 
-var xmlhttp = new XMLHttpRequest();
-var url = "myTutorials.txt";
+        <script>
+            var xmlhttp = new XMLHttpRequest();
+            var requestURL = "test.txt";
+            //"https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=42.274948,-71.808458,DC&destinations=New+York+City,NY&key=AIzaSyAhq_11JVUgHYIlY4AfGwLDaw7YwQDIVg0";
 
-xmlhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-        var myArr = JSON.parse(this.responseText);
-        myFunction(myArr);
-    }
-};
-xmlhttp.open("GET", url, true);
-xmlhttp.send();
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    var myArr = JSON.parse(this.responseText);
+                    document.body.innerHTML = myArr.rows[0].elements[0].duration.text;//origin_addresses;
+                    myFunction(myArr);
+                }
+            };
 
-function myFunction(arr) {
-    var out = "";
-    var i;
-    for(i = 0; i < arr.length; i++) {
-        out += '<a href="' + arr[i].url + '">' +
-        arr[i].display + '</a><br>';
-    }
-    document.getElementById("id01").innerHTML = out;
-}
-</script>
+            xmlhttp.open("GET", requestURL);
+            xmlhttp.send();
+
+            // document.write(xmlhttp)
+            // document.getElementById("waittime").innerHTML = xmlhttp.origin_addresses;
+
+            function myFunction(arr) {
+                var out = "";
+                var i;
+                for(i = 0; i < arr.length; i++) {
+                    out += '<a href="' + arr[i].requestURL + '">' + 
+                    arr[i].display + '</a><br>';
+                }
+                document.getElementById("waittime2").innerHTML = out;
+            }
+
+        </script>
+
+    </body>
+</html>
