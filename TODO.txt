@@ -1,0 +1,2 @@
+1. send locations and change the wait times
+2. get gps locations 
