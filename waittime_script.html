@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html>
     <body>
- 
-        <p id="waittime"></p>
+        <p> Destination : </p>
+        <div ><p id="dest"></p></div>
         <br>
-        <div id= waittime2></div>
+        <p> snap location : </p>
+        <div ><p id="origin"></p></div>
+        <br>
+        <p> Wait Time : </p>
+        <div ><p id="waittime"></p></div>
 
         <script>
             var xmlhttp = new XMLHttpRequest();
@@ -14,7 +18,9 @@
             xmlhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
                     var myArr = JSON.parse(this.responseText);
-                    document.body.innerHTML = myArr.rows[0].elements[0].duration.text;//origin_addresses;
+                    document.getElementById("waittime").innerHTML = myArr.rows[0].elements[0].duration.text;
+                    document.getElementById("dest").innerHTML = myArr.destination_addresses;
+                    document.getElementById("origin").innerHTML = myArr.origin_addresses;
                     myFunction(myArr);
                 }
             };
@@ -22,18 +28,15 @@
             xmlhttp.open("GET", requestURL);
             xmlhttp.send();
 
-            // document.write(xmlhttp)
-            // document.getElementById("waittime").innerHTML = xmlhttp.origin_addresses;
-
-            function myFunction(arr) {
-                var out = "";
-                var i;
-                for(i = 0; i < arr.length; i++) {
-                    out += '<a href="' + arr[i].requestURL + '">' + 
-                    arr[i].display + '</a><br>';
-                }
-                document.getElementById("waittime2").innerHTML = out;
-            }
+            // function myFunction(arr) {
+            //     var out = "";
+            //     var i;
+            //     for(i = 0; i < arr.length; i++) {
+            //         out += '<a href="' + arr[i].requestURL + '">' + 
+            //         arr[i].display + '</a><br>';
+            //     }
+            //     document.getElementById("waittime2").innerHTML = out;
+            // }
 
         </script>
 
