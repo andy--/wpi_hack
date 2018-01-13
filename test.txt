@@ -1,0 +1,22 @@
+{
+   "destination_addresses" : [ "New York, NY, USA" ],
+   "origin_addresses" : [ "71 42nd St NE, Washington, DC 20019, USA" ],
+   "rows" : [
+      {
+         "elements" : [
+            {
+               "distance" : {
+                  "text" : "221 mi",
+                  "value" : 356157
+               },
+               "duration" : {
+                  "text" : "3 hours 39 mins",
+                  "value" : 13162
+               },
+               "status" : "OK"
+            }
+         ]
+      }
+   ],
+   "status" : "OK"
+}
