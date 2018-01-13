@@ -12,8 +12,7 @@
 
         <script>
             var xmlhttp = new XMLHttpRequest();
-            var requestURL = "test.txt";
-            //"https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=42.274948,-71.808458,DC&destinations=New+York+City,NY&key=AIzaSyAhq_11JVUgHYIlY4AfGwLDaw7YwQDIVg0";
+            var requestURL = "https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=42.274948,-71.808458,DC&destinations=New+York+City,NY&key=AIzaSyAhq_11JVUgHYIlY4AfGwLDaw7YwQDIVg0";
 
             xmlhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
@@ -25,7 +24,7 @@
                 }
             };
 
-            xmlhttp.open("GET", requestURL);
+            xmlhttp.open("GET", requestURL,true);
             xmlhttp.send();
 
         </script>

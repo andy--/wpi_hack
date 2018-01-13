@@ -39,13 +39,12 @@
     </div>
     <script>
         var xmlhttp = new XMLHttpRequest();
-        var requestURL = "test.txt";
+        var requestURL;
         var url1= "https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=";
         var url2= ",MA&destinations=";
         var url3= ",MA&key=AIzaSyAhq_11JVUgHYIlY4AfGwLDaw7YwQDIVg0";
-        var latitute,longitute;
         xmlhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
+            if (this.readyState == 4 && this.status == 200) {   
                 var myArr = JSON.parse(this.responseText);
                 document.getElementById("waittime").innerHTML = myArr.rows[0].elements[0].duration.text;
                 document.getElementById("dest").innerHTML = myArr.destination_addresses;
@@ -53,8 +52,30 @@
                 myFunction(myArr);
             }
         };
-        xmlhttp.open("GET", requestURL);
-        xmlhttp.send();
+        var locations={
+          "name":"location_stream",
+          "location":[ 
+            [42.273506, -71.800835],
+            [42.271306, -71.800000],
+            [42.271308, -71.803818],
+            [42.271014, -71.807487],
+            [42.270808, -71.809858],
+            [42.270517, -71.813965]
+           ],
+          "destination":[
+            "26+Lee+St,Worcester,MA+01602"
+          ],
+        };
+        for (var i = 0; i < locations.location.length - 1; i++) {
+          var lattitute=locations.location[i][0];
+          var longitute=locations.location[i][1];
+          var destination=locations.destination;
+          requestURL=url1+lattitute+","+longitute+url2+destination+url3;
+          console.log(requestURL);
+          xmlhttp.open("GET", requestURL);
+          xmlhttp.send();
+        } 
+
     </script>    
   </body>
 </html>
