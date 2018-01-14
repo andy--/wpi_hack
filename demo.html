@@ -12,14 +12,14 @@
         <img src="data/wpi-logo.png" alt="WPI LOGO" style="width:200px;height:20%;">
     </div>
     <div id="centered">
-        <img src="data/car-logo.png" alt="CAR IMAGE" style="width:30px;height:30px;">
+        <img src="data/car-logo.png" alt="CAR IMAGE" style="width:40px;height:40px;">
     </div>
     <script>
       var map;
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: 42.274948, lng:-71.808458},
-          zoom: 16
+          zoom: 17
         });
       }
     </script>
@@ -54,6 +54,7 @@
 
             xmlhttp.open("GET", requestURL,false);
             xmlhttp.send();
+            alert("SNAP arrived, go out!")
     </script>    
   </body>
 </html>

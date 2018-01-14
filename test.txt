@@ -1,6 +1,6 @@
 {
    "destination_addresses" : [ "Rubin Campus Center, 100 Institute Rd, Worcester, MA 01609" ],
-   "origin_addresses" : [ "30 William St, Worcester, MA 01609" ],
+   "origin_addresses" : [ "Atwater Kent Laboratories, Worcester, MA 01609" ],
    "rows" : [
       {
          "elements" : [
@@ -10,7 +10,7 @@
                   "value" : 356157
                },
                "duration" : {
-                  "text" : "5 mins",
+                  "text" : "1 min",
                   "value" : 13162
                },
                "status" : "OK"
