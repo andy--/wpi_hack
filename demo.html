@@ -1,6 +1,32 @@
 <!DOCTYPE html>
 <html>
-    <body>
+  <head>
+    <title>WPI SNAP</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="mystyle.css">
+  </head>
+  <body>
+    <div id="map"></div>
+    <div id="topright">
+        <img src="data/wpi-logo.png" alt="WPI LOGO" style="width:200px;height:20%;">
+    </div>
+    <div id="centered">
+        <img src="data/car-logo.png" alt="CAR IMAGE" style="width:30px;height:30px;">
+    </div>
+    <script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 42.274948, lng:-71.808458},
+          zoom: 16
+        });
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhq_11JVUgHYIlY4AfGwLDaw7YwQDIVg0&callback=initMap"
+    async defer></script>  
+    <div id='topleft'>
+      <strong>
         <p> Your location : </p>
         <div ><p id="dest"></p></div>
         <br>
@@ -9,8 +35,9 @@
         <br>
         <p> Wait Time : </p>
         <div ><p id="waittime"></p></div>
-
-        <script>
+      </strong>
+    </div>
+    <script>
             var xmlhttp = new XMLHttpRequest();
             var requestURL = "test.txt"
             //"https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=42.274948,-71.808458,DC&destinations=New+York+City,NY&key=AIzaSyAhq_11JVUgHYIlY4AfGwLDaw7YwQDIVg0";
@@ -27,18 +54,6 @@
 
             xmlhttp.open("GET", requestURL,false);
             xmlhttp.send();
-
-            // function myFunction(arr) {
-            //     var out = "";
-            //     var i;
-            //     for(i = 0; i < arr.length; i++) {
-            //         out += '<a href="' + arr[i].requestURL + '">' + 
-            //         arr[i].display + '</a><br>';
-            //     }
-            //     document.getElementById("waittime2").innerHTML = out;
-            // }
-
-        </script>
-
-    </body>
+    </script>    
+  </body>
 </html>

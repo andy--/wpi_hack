@@ -1,16 +1,16 @@
 {
-   "destination_addresses" : [ "New York, NY, USA" ],
-   "origin_addresses" : [ "71 42nd St NE, Washington, DC 20019, USA" ],
+   "destination_addresses" : [ "Rubin Campus Center, 100 Institute Rd, Worcester, MA 01609" ],
+   "origin_addresses" : [ "30 William St, Worcester, MA 01609" ],
    "rows" : [
       {
          "elements" : [
             {
                "distance" : {
-                  "text" : "221 mi",
+                  "text" : "1.3 mi",
                   "value" : 356157
                },
                "duration" : {
-                  "text" : "3 hours 39 mins",
+                  "text" : "5 mins",
                   "value" : 13162
                },
                "status" : "OK"
